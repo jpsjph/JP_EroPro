@@ -425,7 +425,8 @@
     <Content Include="Content\Kendo\images\kendoui.ttf" />
     <Content Include="Content\Kendo\images\kendoui.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\Charts.js" />
+    <Content Include="Scripts\Charts\Status.js" />
+    <Content Include="Scripts\Charts\SubStatus.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -433,6 +434,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Charts\AgeDebtor.js" />
     <Content Include="Scripts\Kendo\cultures\kendo.culture.af-ZA.min.js" />
     <Content Include="Scripts\Kendo\cultures\kendo.culture.af.min.js" />
     <Content Include="Scripts\Kendo\cultures\kendo.culture.am-ET.min.js" />
@@ -889,7 +891,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Unity.Mvc4.README.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -32,6 +32,7 @@ namespace DataLayer
         /// change the defaults), as Unity allows resolving a concrete type even if it was not previously registered.</remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
+            
             container.RegisterType<IDataConnectionString, DataConnectionString>(new PerResolveLifetimeManager());
             var connectionString = container.Resolve<IDataConnectionString>();
             container.RegisterType<IDataContext, DataContext>(new InjectionConstructor(connectionString.ConnectionString));

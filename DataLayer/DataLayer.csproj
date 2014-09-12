@@ -101,7 +101,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="DataAccessContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

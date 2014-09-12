@@ -10,9 +10,9 @@ namespace Ero57_Project.Controllers
     public class HomeController : Controller
     {
         private readonly IPersistenceService _service;
-        public HomeController(IPersistenceService service)
+        public HomeController()
         {
-            _service = service;
+           
         }
         public ActionResult Index()
         {

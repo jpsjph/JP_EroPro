@@ -27,7 +27,7 @@
         },
         series: [{
             type: 'pie',
-            name: 'Browser share',
+            name: 'Age Debtor',
             data: [
                 ['Firefox', 45.0],
                 ['IE', 26.8],
