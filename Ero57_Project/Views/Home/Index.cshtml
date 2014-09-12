@@ -1,0 +1,76 @@
+﻿
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="~/Scripts/Charts.js"></script>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    <div class="col-md-5">
+        <div id="ageDebt" style="width:400px;"></div>
+    </div>  
+    @*<div class="col-md-4">
+        <div id="status"></div>
+    </div> 
+    <div class="col-md-4">
+        <div id="subStatus"></div>
+    </div>*@
+</div>
+
+
+
+@*<div class="row">
+    <div class="col-md-4 chart-wrapper">
+        @(Html.Kendo().Chart()
+    .Name("AgePie")
+    .Title(x => x.Text("Age Debt (Inv date)").Position(ChartTitlePosition.Bottom))
+                            .SeriesColors(new string[] { "#42a7ff", "#666666", "#999999", "#cccccc", "#9de219", "#90cc38" })
+    .Legend(l => l.Visible(false))
+                    .Series(s => s.Pie(new dynamic[] {
+                         new {category="Current",value=53000},
+                         new {category="0-30",value=16000},
+                         new {category="31-60",value=11000},
+                         new {category="61-90",value=9600},
+                         new {category="90+",value=5000}
+                    }).Labels(label => label.Template("#= category #: \n #= value#%")
+                       .Visible(false)
+                            )).Tooltip(t => t.Template("${ category } - ${ value }%").Visible(true)))
+    </div>
+
+    <div class="col-md-4">
+        @(Html.Kendo().Chart()
+    .Name("Status")
+    .Title(x => x.Text("Status").Position(ChartTitlePosition.Bottom))
+    .Legend(l => l.Visible(false))
+                    .Series(s => s.Pie(new dynamic[] {
+                         new {category="Current",value=53000,color="#9de219"},
+                         new {category="0-30",value=16000,color="#90cc38"},
+                         new {category="31-60",value=11000,color="#068c35"},
+                         new {category="61-90",value=9600,color="#006634"},
+                         new {category="90+",value=5000,color="#004d38"}
+                    }).Labels(label => label.Template("#= category #: \n #= value#%")
+                       .Background("transparent")
+                       .Visible(false)
+                    ).StartAngle(150)).Tooltip(t => t.Visible(true)))
+    </div>
+    <div class="col-md-4">
+        @(Html.Kendo().Chart()
+    .Name("SubStatus")
+    .Title(x => x.Text("Sub Status").Position(ChartTitlePosition.Bottom))
+    .Legend(l => l.Visible(false))
+                    .Series(s => s.Pie(new dynamic[] {
+                         new {category="Current",value=53000,color="#9de219"},
+                         new {category="0-30",value=16000,color="#90cc38"},
+                         new {category="31-60",value=11000,color="#068c35"},
+                         new {category="61-90",value=9600,color="#006634"},
+                         new {category="90+",value=5000,color="#004d38"}
+                    }).Labels(label => label.Template("#= category #: \n #= value#%")
+                       .Background("transparent")
+                       .Visible(false)
+                    ).StartAngle(150)).Tooltip(t => t.Visible(true)))
+    </div>
+
+</div>*@
