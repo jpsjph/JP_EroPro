@@ -8,7 +8,7 @@ using Core.Infrastructure;
 
 namespace Domain.Model
 {
-    public class Individual: EntityBase
+    public class Individual : EntityBase
     {
         public int IndividualId { get; set; }
         public string Title { get; set; }

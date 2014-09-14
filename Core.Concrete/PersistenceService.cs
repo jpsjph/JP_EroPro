@@ -21,7 +21,7 @@ namespace Core.Concrete
 
         public void Dispose()
         {
-            //_context.Dispose();
+            _context.Dispose();
         }
     }
 }
