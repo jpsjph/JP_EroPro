@@ -14,5 +14,6 @@ namespace Domain.Model
         public DateTime DateUpdated { get; set; }
         public int CreatorId { get; set; }
         public int UpdatorId { get; set; }
+        public ICollection<TransactionPayment> TransactionPayment { get; set; }  
     }
 }

@@ -9,11 +9,6 @@ namespace Domain.Model
 {
     public class TransactionPayment : EntityBaseFields
     {
-        public TransactionPayment()
-        {
-            TransactionStatus = new HashSet<TransactionStatus>();
-            TransactionSubStatus = new HashSet<TransactionSubStatus>();
-        }
         public int TransactionPaymentId { get; set; }
         public string Reference { get; set; }
         public string InvoiceNumber { get; set; }
@@ -26,7 +21,7 @@ namespace Domain.Model
         public decimal OpeningCurrencyAmount { get; set; }
         public DateTime StatusDate { get; set; }
         public bool IsClosed { get; set; }
-        public ICollection<TransactionStatus> TransactionStatus { get; set; }
-        public ICollection<TransactionSubStatus> TransactionSubStatus { get; set; }
+        public TransactionStatus TransactionStatus { get; set; }
+        public TransactionSubStatus TransactionSubStatus { get; set; }
     }
 }

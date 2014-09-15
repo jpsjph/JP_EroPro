@@ -19,14 +19,6 @@ namespace Domain.Model.Enums
         Home,
         Work
     }
-    public enum PhoneType
-    {
-        Home,
-        Work,
-        Mobile
-    }
-    public enum RegistrationType
-    {
-        
-    }
+
+ 
 }

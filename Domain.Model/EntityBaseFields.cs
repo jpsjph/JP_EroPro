@@ -10,7 +10,6 @@ namespace Domain.Model
 {
     public class EntityBaseFields : EntityBase
     {
-        [DefaultValue(DateTime.UtcNow)]
         public DateTime DateCreated { get; set; }
         public DateTime DateUpdated { get; set; }
         public int CreatorId { get; set; }
