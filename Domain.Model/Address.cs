@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Model
 {
-    public class Address : EntityBase
+    public class Address : EntityBaseFields
     {
         public Address()
         {
@@ -23,10 +23,8 @@ namespace Domain.Model
         public string City { get; set; }
         public string Country { get; set; }
         public string PostCode { get; set; }
-        public DateTime DateCreated { get; set; }
-        public DateTime DateUpdated { get; set; }
-        public int CreatorId { get; set; }
-        public int UpdatorId { get; set; }
+     
+        public ClientAddress ClientAddress { get; set; }
         public virtual ICollection<Individual> Individuals { get; set; }
     }
 }

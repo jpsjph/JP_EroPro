@@ -9,7 +9,7 @@
             }
         },
         title: {
-            text: 'Age Debtor'
+            text: 'Status'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -27,7 +27,7 @@
         },
         series: [{
             type: 'pie',
-            name: 'Browser share',
+            name: 'Status',
             data: [
                 ['Firefox', 45.0],
                 ['IE', 26.8],

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Model
 {
-    public class Contact : EntityBase
+    public class Contact : EntityBaseFields
     {
        public Contact()
        {
@@ -21,10 +21,7 @@ namespace Domain.Model
         public DateTime ValidFrom { get; set; }
         public DateTime ValidTo { get; set; }
         public Status ContactStatus { get; set; }
-        public DateTime DateCreated { get; set; }
-        public DateTime DateUpdated { get; set; }
-        public int CreatorId { get; set; }
-        public int UpdatorId { get; set; }
+        
         public virtual ICollection<Individual> Individuals { get; set; }
         //public virtual ICollection<Registration> Registrations { get; set; }
     }

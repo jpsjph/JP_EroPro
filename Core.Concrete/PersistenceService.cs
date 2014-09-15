@@ -19,9 +19,14 @@ namespace Core.Concrete
             return new Repository<T>(_context);
         }
 
+        public IReadOnlyRepository<T> GetReadyOnlyRepository<T>() where T : EntityBase
+        {
+            return new ReadOnlyRepository<T>(_context);
+        }
+
         public void Dispose()
         {
-            //_context.Dispose();
+            _context.Dispose();
         }
     }
 }

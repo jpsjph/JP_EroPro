@@ -8,7 +8,7 @@ using Core.Infrastructure;
 
 namespace Domain.Model
 {
-    public class Individual: EntityBase
+    public class Individual : EntityBaseFields
     {
         public int IndividualId { get; set; }
         public string Title { get; set; }
@@ -16,11 +16,7 @@ namespace Domain.Model
         public string LastName { get; set; }
         public string DefaultEmail { get; set; }
         public string DefaultAddress { get; set; }
-        public Status IndividualStatus { get; set; }
-        public DateTime DateCreated { get; set; }
-        public DateTime DateUpdated { get; set; }
-        public int CreatorId { get; set; }
-        public int UpdatorId { get; set; }
+        public Status IndividualStatus { get; set; }       
         public Contact Contact { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace Core.Infrastructure
     /// IRepository
     /// </summary>
     /// <typeparam name="T">T</typeparam>
-    public interface IRepository<T> : IDisposable where T : EntityBase
+    public interface IRepository<T> : IDisposable where T:EntityBase
     {
         /// <summary>
         /// Find 
@@ -61,7 +61,7 @@ namespace Core.Infrastructure
         /// InsertRange
         /// </summary>
         /// <param name="entities">entities</param>
-        void InsertRange(IEnumerable<T> entities);
+       void InsertRange(IEnumerable<T> entities);
 
         /// <summary>
         /// InsertGraph

@@ -14,7 +14,7 @@ namespace Core.Concrete
         {
             get
             {
-                return ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+                return ConfigurationManager.ConnectionStrings["DataContext"].ConnectionString;
             }
         }
     }

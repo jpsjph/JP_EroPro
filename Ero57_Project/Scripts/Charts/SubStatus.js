@@ -33,7 +33,7 @@
                 ['IE', 26.8],
                 {
                     name: 'Chrome',
-                    y: 12.8,
+                    y: 60,
                     sliced: true,
                     selected: true
                 },

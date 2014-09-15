@@ -12,8 +12,8 @@ namespace Core.Concrete
     public class DataContext : DbContext, IDataContext
     {
 
-        public DataContext(string nameOrConnectionString)
-            : base(nameOrConnectionString)
+        public DataContext(string connectionString)
+            : base(connectionString)
         {
             Configuration.LazyLoadingEnabled = false;
         }

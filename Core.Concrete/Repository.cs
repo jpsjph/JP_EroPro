@@ -10,22 +10,15 @@ using Core.Infrastructure;
 
 namespace Core.Concrete
 {
-    public class Repository<TEntity> : IRepository<TEntity>, IDisposable where TEntity : EntityBase
+    public class Repository<TEntity> : IRepository<TEntity>, IDisposable where TEntity:EntityBase 
     {
         private readonly IDataContext _context;
         private readonly DbSet<TEntity> _dbSet;
-        private readonly Guid _instanceId;
 
         public Repository(IDataContext context)
         {
             _context = context;
             _dbSet = context.Set<TEntity>();
-            _instanceId = Guid.NewGuid();
-        }
-
-        public Guid InstanceId
-        {
-            get { return _instanceId; }
         }
 
         public virtual TEntity Find(params object[] keyValues)
@@ -60,7 +53,7 @@ namespace Core.Concrete
             foreach (var item in entities)
             {
                 Insert(item);
-            }                
+            }
         }
 
         public virtual void InsertGraph(TEntity entity)

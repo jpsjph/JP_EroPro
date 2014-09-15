@@ -17,5 +17,12 @@ namespace Core.Infrastructure
         /// <typeparam name="T">T </typeparam>
         /// <returns>IRepository</returns>
         IRepository<T> GetRepository<T>() where T : EntityBase;
+        
+        /// <summary>
+        /// Get ready only repository
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        IReadOnlyRepository<T> GetReadyOnlyRepository<T>() where T : EntityBase;
     }
 }

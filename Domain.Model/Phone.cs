@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Model
 {
-    public class Phone : EntityBase
+    public class Phone : EntityBaseFields
     {
         public Phone()
         {
@@ -15,11 +15,7 @@ namespace Domain.Model
         }
         public int PhoneId { get; set; }
         public string Number { get; set; }
-        public bool IsDefault { get; set; }
-        public DateTime DateCreated { get; set; }
-        public DateTime DateUpdated { get; set; }
-        public int CreatorId { get; set; }
-        public int UpdatorId { get; set; }
+        public bool IsDefault { get; set; }        
         public virtual ICollection<Individual> Individuals { get; set; }
     }
 }
