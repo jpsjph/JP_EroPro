@@ -39,7 +39,7 @@ namespace DataLayer
             container.RegisterType<IDataContext, DataAccessContext>();
             var dataContext = container.Resolve<IDataContext>();
             container.RegisterType<IEmailService, EmailService>();
-            container.RegisterType(typeof(ILogService), typeof(LogService), new InjectionConstructor(connectionString, container.Resolve<IEmailService>()));
+            container.RegisterType(typeof(ILogService), typeof(LogService), new InjectionConstructor(connectionString.ConnectionString, container.Resolve<IEmailService>()));
             container.RegisterType(typeof(IRepository<>), typeof(Repository<>), new InjectionConstructor(dataContext));
             container.RegisterType(typeof(IReadOnlyRepository<>), typeof(ReadOnlyRepository<>), new InjectionConstructor(dataContext));
             container.RegisterType<IPersistenceService, PersistenceService>(new InjectionConstructor(dataContext));
