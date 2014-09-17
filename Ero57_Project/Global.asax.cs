@@ -23,5 +23,7 @@ namespace Ero57_Project
            container.RegisterType<AccountController>(new InjectionConstructor());
            container.RegisterType<ManageController>(new InjectionConstructor());
         }
+
+
     }
 }

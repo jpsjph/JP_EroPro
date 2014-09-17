@@ -148,7 +148,12 @@
 
                 <!-- logout button -->
                 <div id="logout" class="btn-header transparent pull-right">
-                    <span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
+                    <span>
+                        @Html.ActionLink(" ", "LogOff", "Account", new { @class = "fa fa-sign-out" })
+                        @*<a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser">
+                                <i class="fa fa-sign-out"></i>
+                            </a>*@
+                    </span>
                 </div>
                 <!-- end logout button -->
                 <!-- search mobile button (this is hidden till mobile view port) -->
@@ -243,11 +248,6 @@
             will not initialize.
             -->
             <nav>
-                <!-- NOTE: Notice the gaps after each icon usage <i></i>..
-                Please note that these links work a bit different than
-                traditional href="" links. See documentation for details.
-                -->
-
                 <ul>
                     <li>
                         <a href="index.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
@@ -267,9 +267,6 @@
                             <li>
                                 <a href="inline-charts.html">System</a>
                             </li>
-                            @*<li>
-                                    <a href="dygraphs.html">Dygraphs <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
-                                </li>*@
                         </ul>
                     </li>
                     <li>
@@ -336,7 +333,7 @@
                     <li class="top-menu-hidden active">
                         <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Score Matrix</span></a>
                         <ul>
-                            <li class="fa fa-stack-overflow">@Html.ActionLink("Score", "Index", "ScoreMatrix")</li>
+                            @Html.ActionLink("Credit Score", "Index", "ScoreMatrix", new { @class = "fa fa-stack-overflow" })
 
                             <li class="active">
                                 <a href="applayout.html"><i class="fa fa-cube"></i> App Settings</a>
@@ -380,7 +377,7 @@
 
             @RenderBody()
         </div>
-    }
+}
     else
     {
         @RenderBody()

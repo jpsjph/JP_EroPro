@@ -7,17 +7,18 @@
 <div class="animated fadeInDown">
 
     <header id="header">
-
         <div id="logo-group">
             <span id="logo"> <img src="" alt="Ero57"> </span>
         </div>
-        <span id="extr-page-header-space"> <span class="hidden-mobile">Need an account?</span> <a href="register.html" class="btn btn-danger">Create account</a> </span>
-
+        <span id="extr-page-header-space">
+            <span class="hidden-mobile">
+                Need an account?
+            </span>
+            @Html.ActionLink("Create account", "Register", "Account", new { @class = "btn btn-danger" })
+        </span>
     </header>
 
     <div id="main" role="main">
-
-        <!-- MAIN CONTENT -->
         <div id="content" class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-xs hidden-sm">
@@ -60,7 +61,7 @@
                                         <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b>
                                     </label>
                                     <div class="note">
-                                        <a href="forgotpassword.html">Forgot password?</a>
+                                        @Html.ActionLink("Forgot password?", "ForgotPassword", "Account")
                                     </div>
                                 </section>
 

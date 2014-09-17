@@ -194,6 +194,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ScoreMatrixController.cs" />
+    <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1833,6 +1834,7 @@
     <Content Include="Scripts\MainScripts\plugin\ckeditor\samples\sample_posteddata.php" />
     <Content Include="Scripts\MainScripts\plugin\ckeditor\skins\moono\readme.md" />
     <Content Include="Views\ScoreMatrix\Index.cshtml" />
+    <Content Include="Views\Transaction\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
