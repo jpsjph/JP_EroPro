@@ -47,27 +47,31 @@ namespace DataLayer
             container.RegisterType<IPersistenceService, PersistenceService>(new InjectionConstructor(dataContext));
 
             container.RegisterTypes(AllClasses.FromLoadedAssemblies()
-                                               .Where(type => typeof(IRunAtInit).IsInstanceOfType(type)),
+                                              .Where(type => typeof(IRunAtInit).IsInstanceOfType(type)),
                                                               WithMappings.FromAllInterfaces,
                                                               WithName.TypeName,
                                                               WithLifetime.Transient);
-            container.RegisterTypes(AllClasses.FromLoadedAssemblies().Where(type => typeof(IRunAtStartup).IsInstanceOfType(type)),
-                                                                                       WithMappings.FromAllInterfaces,
-                                                                                       WithName.TypeName,
-                                                                                       WithLifetime.Transient);
-            container.RegisterTypes(AllClasses.FromLoadedAssemblies().Where(type => typeof(IRunOnError).IsInstanceOfType(type)),
-                                                                                        WithMappings.FromAllInterfaces,
-                                                                                        WithName.TypeName,
-                                                                                        WithLifetime.Transient);
-            container.RegisterTypes(AllClasses.FromLoadedAssemblies().Where(type => typeof(IRunOnRequest).IsInstanceOfType(type)),
-                                                                                       WithMappings.FromAllInterfaces,
-                                                                                       WithName.TypeName,
-                                                                                       WithLifetime.Transient);
+            container.RegisterTypes(AllClasses.FromLoadedAssemblies()
+                                              .Where(type => typeof(IRunAtStartup).IsInstanceOfType(type)),
+                                                              WithMappings.FromAllInterfaces,
+                                                              WithName.TypeName,
+                                                              WithLifetime.Transient);
+            container.RegisterTypes(AllClasses.FromLoadedAssemblies()
+                                              .Where(type => typeof(IRunOnError).IsInstanceOfType(type)),
+                                                              WithMappings.FromAllInterfaces,
+                                                              WithName.TypeName,
+                                                              WithLifetime.Transient);
+            container.RegisterTypes(AllClasses.FromLoadedAssemblies()
+                                              .Where(type => typeof(IRunOnRequest).IsInstanceOfType(type)),
+                                                              WithMappings.FromAllInterfaces,
+                                                              WithName.TypeName,
+                                                              WithLifetime.Transient);
 
-            container.RegisterTypes(AllClasses.FromLoadedAssemblies().Where(type => typeof(IRunAfterRequest).IsInstanceOfType(type)),
-                                                                                       WithMappings.FromAllInterfaces,
-                                                                                       WithName.TypeName,
-                                                                                       WithLifetime.Transient);
+            container.RegisterTypes(AllClasses.FromLoadedAssemblies()
+                                              .Where(type => typeof(IRunAfterRequest).IsInstanceOfType(type)),
+                                                              WithMappings.FromAllInterfaces,
+                                                              WithName.TypeName,
+                                                              WithLifetime.Transient);
 
         }
     }

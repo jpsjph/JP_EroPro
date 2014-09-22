@@ -8,7 +8,7 @@ using Domain.Model;
 
 namespace Ero57_Project.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class HomeController : Controller
     {
         private readonly IPersistenceService _service;

@@ -10,6 +10,7 @@ using Microsoft.Practices.Unity;
 using Unity.Mvc4;
 using Common.Services.Tasks;
 using Ero57_Project.Controllers;
+using System.Security.Principal;
 namespace Ero57_Project
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -26,9 +27,13 @@ namespace Ero57_Project
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            Container = Container ?? Bootstrapper.GetConfiguredContainer();
-            Container.RegisterType<AccountController>(new InjectionConstructor());
-            Container.RegisterType<ManageController>(new InjectionConstructor());
+            if (Container == null)
+            {
+                Container = Bootstrapper.GetConfiguredContainer();
+                Container.RegisterType<AccountController>(new InjectionConstructor());
+                Container.RegisterType<ManageController>(new InjectionConstructor());
+                //Container.RegisterType(typeof(IIdentity), typeof(HttpContext.Current.User.Identity))();
+            }
             foreach (var task in Container.ResolveAll<IRunAtInit>())
             {
                 task.Execute();
