@@ -1847,6 +1847,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common.Services\Common.Services.csproj">
+      <Project>{37ede102-1b90-4ac0-8ba3-32119c4d27bd}</Project>
+      <Name>Common.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core.Infrastructure\Core.Infrastructure.csproj">
       <Project>{5a2f6054-2f1d-4bbb-a8be-a82076f19807}</Project>
       <Name>Core.Infrastructure</Name>
