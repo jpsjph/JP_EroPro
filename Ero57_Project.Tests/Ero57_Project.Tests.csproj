@@ -85,8 +85,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\GenericConfiguration.cs" />
+    <Compile Include="ContactServiceTest.cs" />
+    <Compile Include="DebtorServiceTest.cs" />
+    <Compile Include="DependencyInjectionTest.cs" />
+    <Compile Include="Helpers\ClientHelper.cs" />
+    <Compile Include="Helpers\ContactHelper.cs" />
+    <Compile Include="Helpers\DebtorHelper.cs" />
+    <Compile Include="Helpers\DebtorPerformanceHelper.cs" />
+    <Compile Include="Helpers\TokenHelper.cs" />
+    <Compile Include="Helpers\TransactionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="ScoreMatrixTest.cs" />
+    <Compile Include="TokenServicesTest.cs" />
+    <Compile Include="TransactionRuleTest.cs" />
+    <Compile Include="TransactionServiceTests.cs" />
+    <Compile Include="TransactionTypeServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
