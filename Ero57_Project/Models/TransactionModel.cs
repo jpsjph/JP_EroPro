@@ -28,7 +28,7 @@ namespace Ero57_Project.Models
         public void CreateMappings(IConfiguration configuration)
         {
            configuration.CreateMap<TransactionPayment,TransactionModel>()
-               .ForMember(x=>x.)
+               .ForMember(x=>x.TransactionId).Include
         }
     }
 }
