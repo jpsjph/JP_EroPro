@@ -35,8 +35,9 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Moq">
-      <HintPath>..\packages\Moq.4.2.1408.0717\lib\net40\Moq.dll</HintPath>
+    <Reference Include="Moq, Version=4.2.1409.1722, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -86,8 +87,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\GenericConfiguration.cs" />
-    <Compile Include="ContactServiceTest.cs" />
-    <Compile Include="DebtorServiceTest.cs" />
     <Compile Include="DependencyInjectionTest.cs" />
     <Compile Include="Helpers\ClientHelper.cs" />
     <Compile Include="Helpers\ContactHelper.cs" />
@@ -97,9 +96,7 @@
     <Compile Include="Helpers\TransactionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
-    <Compile Include="ScoreMatrixTest.cs" />
     <Compile Include="TokenServicesTest.cs" />
-    <Compile Include="TransactionRuleTest.cs" />
     <Compile Include="TransactionServiceTests.cs" />
     <Compile Include="TransactionTypeServiceTest.cs" />
   </ItemGroup>
@@ -110,6 +107,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core.Concrete\Core.Concrete.csproj">
+      <Project>{abbebbf4-5434-46a0-9371-e2edfb503173}</Project>
+      <Name>Core.Concrete</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Infrastructure\Core.Infrastructure.csproj">
+      <Project>{5a2f6054-2f1d-4bbb-a8be-a82076f19807}</Project>
+      <Name>Core.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ero57_Project\Ero57_Project.csproj">
       <Project>{66792927-1A03-408B-86D6-DD2B13CF9B7E}</Project>
       <Name>Ero57_Project</Name>
