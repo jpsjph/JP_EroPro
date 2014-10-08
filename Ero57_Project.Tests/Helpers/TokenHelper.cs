@@ -3,7 +3,7 @@ using Domain.Model;
 using System;
 using System.Collections.Generic;
 
-namespace Ero57_API.Tests.Helpers
+namespace Ero57_Project.Tests.Helpers
 {
     public class TokenHelper
     {

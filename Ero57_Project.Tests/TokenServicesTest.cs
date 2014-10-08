@@ -1,16 +1,15 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Common.Services.ViewModel;
-using Ero57_API.Tests.Configuration;
+using Ero57_Project.Tests.Configuration;
 using Domain.Model;
 using System.Collections.Generic;
-using Ero57_API.Tests.Helpers;
+using Ero57_Project.Tests.Helpers;
 using Common.Concrete;
 using Core.Infrastructure;
 using System.Linq;
 using Moq;
 
-namespace Ero57_API.Tests
+namespace Ero57_Project.Tests
 {
     [TestClass]
     public class TokenServicesTest

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Ero57_API.Tests.Helpers
+namespace Ero57_Project.Tests.Helpers
 {
     public static class DebtorHelper
     {

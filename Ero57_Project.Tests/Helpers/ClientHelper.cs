@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ero57_API.Tests.Helpers
+namespace Ero57_Project.Tests.Helpers
 {
     public class ClientHelper
     {

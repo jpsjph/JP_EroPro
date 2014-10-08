@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMappingConfig.cs" />
+    <Compile Include="BaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionPaymentService.cs" />
     <Compile Include="TransactionPerRequest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +63,10 @@
     <ProjectReference Include="..\Core.Infrastructure\Core.Infrastructure.csproj">
       <Project>{5a2f6054-2f1d-4bbb-a8be-a82076f19807}</Project>
       <Name>Core.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Model\Domain.Model.csproj">
+      <Project>{7817b12b-050f-4c87-a41e-a268c05773a1}</Project>
+      <Name>Domain.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,7 +21,8 @@ namespace Core.Infrastructure
         /// </summary>
         /// <returns></returns>
         IQueryable<T> GetAll();
-
+        
+     
         /// <summary>
         /// FindBy
         /// </summary>

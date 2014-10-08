@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ero57_API.Tests.Configuration
+namespace Ero57_Project.Tests.Configuration
 {
     public class GenericConfiguration<T> where T : EntityBase
     {
@@ -66,7 +66,7 @@ namespace Ero57_API.Tests.Configuration
         public void SetupMockEntityRepositoryForFindAsync(List<T> results)
         {
             SetupMocForPersistence();
-            MockEntity.Setup(r => r.FindAsync(It.IsAny<object>())).Returns(Task.FromResult<T>(null));
+            MockEntity.Setup(r => r.FindAsync(It.IsAny<object>())).Returns(Task.FromResult<T>(results.FirstOrDefault()));
         }
         
         /// Setup  mock for readonly findby method

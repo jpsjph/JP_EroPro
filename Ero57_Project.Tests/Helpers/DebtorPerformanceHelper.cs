@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Common.Services.ViewModel;
 using Domain.Model;
 
-namespace Ero57_API.Tests.Helpers
+namespace Ero57_Project.Tests.Helpers
 {
     public class DebtorPerformanceHelper
     {

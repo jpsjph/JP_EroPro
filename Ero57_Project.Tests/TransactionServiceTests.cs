@@ -1,33 +1,28 @@
 ﻿using Common.Concrete;
 using Common.Services;
-using Common.Services.ViewModel;
 using Domain.Model;
-using Ero57_API.Controllers;
-using Ero57_API.Tests.Configuration;
-using Ero57_API.Tests.Helpers;
+using Ero57_Project.Tests.Configuration;
+using Ero57_Project.Tests.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using NetSpell.SpellChecker.Dictionary;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web.Http.Results;
 
-namespace Ero57_API.Tests
+namespace Ero57_Project.Tests
 {
     [TestClass]
     public class TransactionServiceTests
     {
-        private GenericConfiguration<Transaction> _transConfiguration;
-        private List<Transaction> _transList;
-        private TransactionModel _transactionModel;
+        private GenericConfiguration<TransactionPayment> _transConfiguration;
+        private List<TransactionPayment> _transList;
 
         [TestInitialize]
         public void TearUp()
         {
-            _transConfiguration = new GenericConfiguration<Transaction>();
+            _transConfiguration = new GenericConfiguration<TransactionPayment>();
             _transConfiguration.Setup();
             _transList = TransactionHelper.GetTransactionList();
             _transactionModel = TransactionHelper.GetTransactionModel();
@@ -185,55 +180,6 @@ namespace Ero57_API.Tests
             var result = transService.AddUnallocatedCashTransactionToAccount(_transactionModel);
             _transConfiguration.MockEntity.Verify(x => x.SaveChanges(true), Times.AtLeastOnce());
             Assert.AreEqual(result.Value, _transactionModel.Value);
-        }
-
-        [TestMethod]
-        public void test()
-        {
-            WordDictionary oDict = new WordDictionary();
-            var wordResult = new SortedList<string,string>();
-            oDict.DictionaryFile = "en-GB.dic";
-            oDict.Initialize();
-            NetSpell.SpellChecker.Spelling spell = new NetSpell.SpellChecker.Spelling();
-            spell.Dictionary=oDict;
-            char [] chdelimit={' ','\n', '\t', '\r'};
-
-            using (var st=File.OpenText(@"C:\Users\Jean-PierreSegikwiye\Downloads\words-english.txt"))
-            {
-                string s = string.Empty;
-                while ((s = st.ReadLine()) != null)
-                {
-                    foreach (var item in s.Split(chdelimit))
-                    {
-                        if (item.Length == 4  && spell.TestWord(item))
-                        {
-                            //wordResult.Add(s);
-                            wordResult[s] = s;
-                        }
-                    }
-                }
-		 
-	        }
-
-
-
-            var d = wordResult.TakeWhile(x => x.Key != "Adam").SkipWhile(x => x.Key == "Abel").ToList();
-          
-            var startword = "abel";
-            var endword="Adam";
-            
-            var result = new List<string>();
-            result.Add(startword);
-            var tt = d.FirstOrDefault().Key;
-            foreach (var item in d)
-            { 
-                if (item.Key.Except(tt).Count()==1)
-                {
-                    result.Add(tt);                   
-                }
-                tt = item.Key;
-            }
-            result.Add(endword);
         }
     }
 }

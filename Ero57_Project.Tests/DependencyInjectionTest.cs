@@ -8,7 +8,7 @@ using System.Web.Http.Controllers;
 
 
 
-namespace Ero57_API.Tests
+namespace Ero57_Project.Tests
 {
     [TestClass]
     public class DependencyInjectionTest
@@ -80,7 +80,7 @@ namespace Ero57_API.Tests
             container.RegisterInstance<ILogService>(new LogService("ConnectionString", new EmailService()));
             var server = new HttpServer(config);
             var client = new HttpClient(server);
-            client.GetAsync("http://localhost/Ero57_API/api/transaction/1").ContinueWith(task =>
+            client.GetAsync("http://localhost/Ero57_Project/api/transaction/1").ContinueWith(task =>
                     {
                         var response = task.Result;
                         Assert.IsNotNull(response.Content);

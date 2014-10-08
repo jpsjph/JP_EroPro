@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using Common.Concrete;
 using Domain.Model;
-using Ero57_API.Tests.Configuration;
-using Ero57_API.Tests.Helpers;
+using Ero57_Project.Tests.Configuration;
+using Ero57_Project.Tests.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ero57_API.Tests
+namespace Ero57_Project.Tests
 {
     [TestClass]
     public class TransactionTypeServiceTest
