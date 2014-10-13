@@ -1,5 +1,6 @@
-﻿
+﻿@model TransactionModel
 @{
+    Layout = null;
     ViewBag.Title = "Index";
 }
 
@@ -7,29 +8,32 @@
 
     <header>
         <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-        <h2>Export to PDF / Excel</h2>
-
+        <h2>Transaction Details</h2>
     </header>
- 
     <div>
-
         <div class="jarviswidget-editbox">
 
-        </div>    
-        <div class="widget-body no-padding">
-            @*@(Html.Kendo().Grid().Name("TransactionGrid"))*@
-
-          
-
         </div>
-
+        <div class="widget-body no-padding">
+            @(Html.Kendo().Grid<TransactionModel>().Name("gridTransaction")
+                .Columns(column =>
+                {
+                    column.Bound(m => m.Reference);
+                    column.Bound(m => m.InvoiceNumber);
+                    column.Bound(m => m.Amount);
+                    column.Bound(m => m.OpeningAmount);
+                    column.Bound(m => m.StatusDate);
+                    column.Bound(m => m.DueDate);
+                    column.Bound(m => m.IsClosed);
+                    column.Bound(m => m.TransactionDate);
+                    column.Bound(m => m.CurrencyAmount);
+                    column.Bound(m => m.DateReceived);
+                })
+                .Resizable(resize => resize.Columns(true))
+                .Reorderable(reorder => reorder.Columns(true))
+                .AutoBind(false).Pageable(pageable => pageable.Refresh(true).PageSizes(true).ButtonCount(5))
+                .DataSource(source => source.Ajax()
+                .Read(read => read.Action("GetTransaction", "Transaction"))))
+        </div>
     </div>
-
 </div>
-
-
-
-
-
-
-

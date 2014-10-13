@@ -49,7 +49,7 @@
     <Compile Include="AutoMappingConfig.cs" />
     <Compile Include="BaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TransactionPaymentService.cs" />
+    <Compile Include="TransactionService.cs" />
     <Compile Include="TransactionPerRequest.cs" />
   </ItemGroup>
   <ItemGroup>

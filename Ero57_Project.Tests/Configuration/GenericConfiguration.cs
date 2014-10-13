@@ -11,7 +11,6 @@ namespace Ero57_Project.Tests.Configuration
 {
     public class GenericConfiguration<T> where T : EntityBase
     {
-
         public Mock<IPersistenceService> MockPersistence { get; set; }
         public Mock<ILogService> MockLog { get; set; }
         public Mock<IReadOnlyRepository<T>> MockReadOnlyRepository { get; set; }
@@ -66,7 +65,7 @@ namespace Ero57_Project.Tests.Configuration
         public void SetupMockEntityRepositoryForFindAsync(List<T> results)
         {
             SetupMocForPersistence();
-            MockEntity.Setup(r => r.FindAsync(It.IsAny<object>())).Returns(Task.FromResult<T>(results.FirstOrDefault()));
+            MockEntity.Setup(r => r.FindAsync(It.IsAny<object>())).Returns( new Mock<Task<T>>().Object);
         }
         
         /// Setup  mock for readonly findby method

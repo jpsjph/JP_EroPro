@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Common.Concrete
 {
-    public class TransactionPaymentService : BaseService, ITransactionPaymentService
+    public class TransactionService : BaseService, ITransactionService
     {
 
-        public TransactionPaymentService(IPersistenceService persistenceService, ILogService logService)
+        public TransactionService(IPersistenceService persistenceService, ILogService logService)
             : base(persistenceService, logService)
         {
 

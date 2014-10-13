@@ -1,4 +1,7 @@
-﻿using Core.Infrastructure;
+﻿using Common.Services;
+using Core.Infrastructure;
+using Kendo.Mvc.UI;
+using Kendo.Mvc.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +12,23 @@ namespace Ero57_Project.Controllers
 {
     public class TransactionController : Controller
     {
-        
-        public TransactionController(IPersistenceService service, ILogService logService)
-        {
 
+        private readonly ITransactionService _transactionService;
+        public TransactionController(ITransactionService transactionService)
+        {
+            _transactionService = transactionService;
         }
-        // GET: Transaction
+
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public JsonResult GetTransaction([DataSourceRequest] DataSourceRequest request)
+        {
+            var result = _transactionService.GetAllTransactionPayment();
+            return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
     }
 }

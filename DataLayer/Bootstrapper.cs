@@ -1,3 +1,5 @@
+using Common.Concrete;
+using Common.Services;
 using Common.Services.Tasks;
 using Core.Concrete;
 using Core.Infrastructure;
@@ -45,12 +47,23 @@ namespace DataLayer
             container.RegisterType(typeof(IRepository<>), typeof(Repository<>), new InjectionConstructor(dataContext));
             container.RegisterType(typeof(IReadOnlyRepository<>), typeof(ReadOnlyRepository<>), new InjectionConstructor(dataContext));
             container.RegisterType<IPersistenceService, PersistenceService>(new InjectionConstructor(dataContext));
+            RegisterTaskServices(container);
+            RegisterCommonServices(container);
 
+        }
+
+        private static void RegisterCommonServices(IUnityContainer container)
+        {
+            container.RegisterType(typeof(ITransactionService), typeof(TransactionService), new InjectionConstructor(container.Resolve<IPersistenceService>(), container.Resolve<ILogService>()));
+
+        } 
+        private static void RegisterTaskServices(IUnityContainer container)
+        {
             container.RegisterTypes(AllClasses.FromLoadedAssemblies()
-                                              .Where(type => typeof(IRunAtInit).IsInstanceOfType(type)),
-                                                              WithMappings.FromAllInterfaces,
-                                                              WithName.TypeName,
-                                                              WithLifetime.Transient);
+                                             .Where(type => typeof(IRunAtInit).IsInstanceOfType(type)),
+                                                             WithMappings.FromAllInterfaces,
+                                                             WithName.TypeName,
+                                                             WithLifetime.Transient);
             container.RegisterTypes(AllClasses.FromLoadedAssemblies()
                                               .Where(type => typeof(IRunAtStartup).IsInstanceOfType(type)),
                                                               WithMappings.FromAllInterfaces,

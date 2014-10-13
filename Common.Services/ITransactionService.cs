@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace Common.Services
 {
-    public interface ITransactionPaymentService
+    public interface ITransactionService
     {
         /// <summary>
         /// Get all transaction payments
         /// </summary>
         /// <returns>List of TransactionPayment</returns>
-        IEnumerable<TransactionPayment>GetAllTransactionPayment();
-
+        IEnumerable<TransactionPayment> GetAllTransactionPayment();
     }
 }

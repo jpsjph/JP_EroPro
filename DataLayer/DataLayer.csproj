@@ -106,6 +106,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common.Concrete\Common.Concrete.csproj">
+      <Project>{6313d0a1-4b1e-4fb7-92f8-97083e37bcb1}</Project>
+      <Name>Common.Concrete</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Services\Common.Services.csproj">
       <Project>{37ede102-1b90-4ac0-8ba3-32119c4d27bd}</Project>
       <Name>Common.Services</Name>
