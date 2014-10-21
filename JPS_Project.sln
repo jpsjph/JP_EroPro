@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ero57_Project", "Ero57_Project\Ero57_Project.csproj", "{66792927-1A03-408B-86D6-DD2B13CF9B7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPS_Project", "Ero57_Project\JPS_Project.csproj", "{66792927-1A03-408B-86D6-DD2B13CF9B7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ero57_Project.Tests", "Ero57_Project.Tests\Ero57_Project.Tests.csproj", "{42520BE5-5664-4199-85E6-D67EAEFDAFAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPS_Project.Tests", "Ero57_Project.Tests\JPS_Project.Tests.csproj", "{42520BE5-5664-4199-85E6-D67EAEFDAFAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Concrete", "Common.Concrete\Common.Concrete.csproj", "{6313D0A1-4B1E-4FB7-92F8-97083E37BCB1}"
 EndProject

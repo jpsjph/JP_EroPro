@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Ero57_Project
+namespace JPS_Project
 {
     public class RouteConfig
     {

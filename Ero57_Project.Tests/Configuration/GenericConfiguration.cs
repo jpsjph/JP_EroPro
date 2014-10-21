@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ero57_Project.Tests.Configuration
+namespace JPS_Project.Tests.Configuration
 {
     public class GenericConfiguration<T> where T : EntityBase
     {

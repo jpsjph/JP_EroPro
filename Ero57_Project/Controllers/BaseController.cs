@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Ero57_Project.Controllers
+namespace JPS_Project.Controllers
 {
     public class BaseController : Controller
     {

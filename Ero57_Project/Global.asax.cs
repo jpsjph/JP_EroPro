@@ -9,9 +9,9 @@ using System.Web.Routing;
 using Microsoft.Practices.Unity;
 using Unity.Mvc4;
 using Common.Services.Tasks;
-using Ero57_Project.Controllers;
+using JPS_Project.Controllers;
 using System.Security.Principal;
-namespace Ero57_Project
+namespace JPS_Project
 {
     public class MvcApplication : System.Web.HttpApplication
     {

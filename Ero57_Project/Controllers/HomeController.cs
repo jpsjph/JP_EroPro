@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Domain.Model;
 
-namespace Ero57_Project.Controllers
+namespace JPS_Project.Controllers
 {
     //[Authorize]
     public class HomeController : Controller

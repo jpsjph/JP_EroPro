@@ -6,7 +6,7 @@ using Common.Services.Map;
 using AutoMapper;
 using Domain.Model;
 
-namespace Ero57_Project.Models
+namespace JPS_Project.Models
 {
     public class TransactionModel : ICustomMapping
     {

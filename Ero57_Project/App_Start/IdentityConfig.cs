@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Ero57_Project.Models;
+using JPS_Project.Models;
 
-namespace Ero57_Project
+namespace JPS_Project
 {
     public class EmailService : IIdentityMessageService
     {

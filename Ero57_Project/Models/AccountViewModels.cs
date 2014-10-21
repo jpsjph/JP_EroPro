@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Ero57_Project.Models
+namespace JPS_Project.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

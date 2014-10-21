@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Ero57_Project
+namespace JPS_Project
 {
     public class FilterConfig
     {

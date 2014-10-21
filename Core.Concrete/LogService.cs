@@ -108,7 +108,7 @@ namespace Core.Concrete
             var conn = new System.Data.SqlClient.SqlConnection(builder.ProviderConnectionString);
             PortalInfo =
                 string.Format("Portal Name: {0}\r\nDB Server: {1}\r\nDB Name: {2}\r\nEnvironment: {3}\r\nPortal Root: {4}\r\n",
-                    "Ero57_Project", conn.DataSource, conn.Database, Environment.MachineName,
+                    "JPS_Project", conn.DataSource, conn.Database, Environment.MachineName,
                     AppDomain.CurrentDomain.BaseDirectory);
             return _log;
         }

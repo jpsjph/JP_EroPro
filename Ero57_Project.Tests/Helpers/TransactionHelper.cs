@@ -1,5 +1,4 @@
-﻿using Common.Services.ViewModel;
-using Domain.Model;
+﻿using Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +7,14 @@ namespace Ero57_Project.Tests.Helpers
 {
     public class TransactionHelper
     {
-        public static List<Transaction> GetTransactionList()
+        public static List<TransactionPayment> GetTransactionList()
         {
-            return new List<Transaction>
+            return new List<TransactionPayment>
             {
-                new Transaction{ID=1, TransactionRef="110009011496RI", AllocationRef="AllRef01N", DunningProtxPayments=GetDunningProtxPaymentsByTransId(1), Billed=false,BilledDate = DateTime.Now,Client = 1, Client1 =ClientHelper.GetClientById(1), Closed = true,Commission = 15,CurrencyCode = "Euro",Debtor1  = DebtorHelper.GetDebtorById(2) },
-                new Transaction{ID=2,TransactionRef="1100090114978RI",AllocationRef="Ref015",DunningProtxPayments=GetDunningProtxPaymentsByTransId(2),Billed=true,BilledDate = DateTime.Now.AddDays(-1),Client = 4,Client1 =ClientHelper.GetClientById(4),Closed = true,Commission = 715,CurrencyCode = "Euro",Debtor1  = DebtorHelper.GetDebtorById(1)},
-                new Transaction{ID=4,TransactionRef="110009011496NI",AllocationRef="Ref35",DunningProtxPayments=GetDunningProtxPaymentsByTransId(4),Billed=false,BilledDate = DateTime.Now.AddDays(-15),Client = 3,Client1 =ClientHelper.GetClientById(3),Closed = false,Commission = 155,CurrencyCode = "Euro",Debtor1  = DebtorHelper.GetDebtorById(22)} ,
-                new Transaction{ID=15, TransactionRef="1100090154496RI",AllocationRef="Ref8554",DunningProtxPayments=GetDunningProtxPaymentsByTransId(15),Billed=true,BilledDate = DateTime.Now.AddDays(5),Client = 31,Client1 =ClientHelper.GetClientById(31),Closed = false,Commission = 175,CurrencyCode = "Euro",Debtor1  = DebtorHelper.GetDebtorById(112)}
+                new TransactionPayment{TransactionPaymentId=1, Reference="110009011496RI", Amount=250, CurrencyAmount=350, DateReceived=DateTime.Now, IsClosed=false,DueDate = DateTime.Now, Closed = true,Commission = 15,CurrencyCode = "Euro",Debtor1  = DebtorHelper.GetDebtorById(2) },
+                new TransactionPayment{TransactionPaymentId=2, Reference="1100090114978RI",Amount=2050, CurrencyAmount=350, IsClosed=true,DueDate = DateTime.Now.AddDays(-1),Client = 4,Client1 =ClientHelper.GetClientById(4),Closed = true,Commission = 715,CurrencyCode = "Euro",Debtor1  = DebtorHelper.GetDebtorById(1)},
+                new TransactionPayment{TransactionPaymentId=4, Reference="110009011496NI",Amount=255.50,CurrencyAmount=350, IsClosed=false,DueDate = DateTime.Now.AddDays(-15),Client = 3,Client1 =ClientHelper.GetClientById(3),Closed = false,Commission = 155,CurrencyCode = "Euro",Debtor1  = DebtorHelper.GetDebtorById(22)} ,
+                new TransactionPayment{TransactionPaymentId=5,Reference="1100090154496RI",Amount=3250,  CurrencyAmount=350, IsClosed=true,DueDate = DateTime.Now.AddDays(5),Client = 31,Client1 =ClientHelper.GetClientById(31),Closed = false,Commission = 175,CurrencyCode = "Euro",Debtor1  = DebtorHelper.GetDebtorById(112)}
             };
         }
 

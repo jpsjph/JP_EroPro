@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Ero57_Project.Alerts
+namespace JPS_Project.Alerts
 {
     public class Alerts
     {

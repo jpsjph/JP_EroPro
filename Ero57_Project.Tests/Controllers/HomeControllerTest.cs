@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Ero57_Project;
-using Ero57_Project.Controllers;
+using JPS_Project;
+using JPS_Project.Controllers;
 
-namespace Ero57_Project.Tests.Controllers
+namespace JPS_Project.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest

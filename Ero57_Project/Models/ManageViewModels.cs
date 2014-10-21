@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace Ero57_Project.Models
+namespace JPS_Project.Models
 {
     public class IndexViewModel
     {

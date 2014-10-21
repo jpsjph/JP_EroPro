@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Ero57_Project.Models;
+using JPS_Project.Models;
 
-namespace Ero57_Project
+namespace JPS_Project
 {
     public partial class Startup
     {

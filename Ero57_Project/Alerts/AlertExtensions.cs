@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Ero57_Project.Alerts
+namespace JPS_Project.Alerts
 {
     public static class AlertExtensions
     {
