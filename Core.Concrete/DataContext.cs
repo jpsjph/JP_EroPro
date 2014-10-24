@@ -17,7 +17,7 @@ namespace Core.Concrete
         {
             Configuration.LazyLoadingEnabled = false;
         }
-  
+
         public new DbSet<T> Set<T>() where T : EntityBase
         {
             return base.Set<T>();
@@ -61,6 +61,13 @@ namespace Core.Concrete
         {
             foreach (var dbEntityEntry in ChangeTracker.Entries())
                 ((IObjectState)dbEntityEntry.Entity).ObjectState = StateHelper.ConvertState(dbEntityEntry.State);
+        }
+
+
+
+        public Database DatabaseContext
+        {
+            get { return base.Database; }
         }
     }
 }

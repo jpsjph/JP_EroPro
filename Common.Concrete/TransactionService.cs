@@ -17,13 +17,13 @@ namespace Common.Concrete
         {
 
         }
-        public IEnumerable<TransactionPayment> GetAllTransactionPayment()
+        public IQueryable<TransactionPayment> GetAllTransactionPayment()
         {
             try
             {
                 using (var repository = PersistenceService.GetReadyOnlyRepository<TransactionPayment>())
                 {
-                    return repository.GetAll().ToList();
+                    return repository.GetAll();
                 }
             }
             catch (Exception ex)

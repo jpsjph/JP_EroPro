@@ -3,18 +3,18 @@ using Common.Services;
 using Common.Services.Tasks;
 using Core.Concrete;
 using Core.Infrastructure;
-using Microsoft.Practices.Unity;
+//using Microsoft.Practices.Unity;
 using System;
 using System.Linq;
-using System.Web.Mvc;
-using Unity.Mvc4;
+//using System.Web.Mvc;
+//using Unity.Mvc4;
 
 namespace DataLayer
 {
     /// <summary>
     /// Unity Start
     /// </summary>
-    public static class Bootstrapper
+    /*public static class Bootstrapper
     {
         private static Lazy<IUnityContainer> container = new Lazy<IUnityContainer>(() =>
         {
@@ -87,5 +87,5 @@ namespace DataLayer
                                                               WithLifetime.Transient);
 
         }
-    }
+    }*/
 }

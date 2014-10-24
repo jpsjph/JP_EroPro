@@ -7,7 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using AutoMapper.QueryableExtensions;
+using JPS_Project.Models;
 namespace JPS_Project.Controllers
 {
     public class TransactionController : Controller
@@ -27,8 +28,8 @@ namespace JPS_Project.Controllers
         [HttpPost]
         public JsonResult GetTransaction([DataSourceRequest] DataSourceRequest request)
         {
-            var result = _transactionService.GetAllTransactionPayment();
-            return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+            var result = _transactionService.GetAllTransactionPayment().Project().To<TransactionModel>();
+            return Json(result.ToList().ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
     }
 }

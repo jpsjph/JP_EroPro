@@ -13,6 +13,13 @@ namespace Core.Infrastructure
     /// </summary>
     public interface IDataContext : IDisposable
     {
+
+        /// <summary>
+        ///  Get Database
+        /// </summary>
+        Database DatabaseContext { get; }
+    
+
         /// <summary>
         /// Set
         /// </summary>

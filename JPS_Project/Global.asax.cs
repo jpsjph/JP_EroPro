@@ -6,53 +6,38 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Microsoft.Practices.Unity;
-using Unity.Mvc4;
 using Common.Services.Tasks;
-using JPS_Project.Controllers;
-using System.Security.Principal;
+using JPS_Project.Registries;
+using StructureMap;
 namespace JPS_Project
 {
     public class MvcApplication : System.Web.HttpApplication
-    {
+    {     
 
-        public IUnityContainer Container
-        {
-            get { return (IUnityContainer)HttpContext.Current.Items["_Container"]; }
-            set { HttpContext.Current.Items["_Container"] = value; }
-        }
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            if (Container == null)
+            var container = IocInitialize.Initialize();
+            DependencyResolver.SetResolver(new StructureMapDependencyResolver(() => Container ?? container));
+            using (var cont = container.GetNestedContainer())
             {
-                Container = Bootstrapper.GetConfiguredContainer();
-                Container.RegisterType<AccountController>(new InjectionConstructor());
-                Container.RegisterType<ManageController>(new InjectionConstructor());
-                //Container.RegisterType(typeof(IIdentity), typeof(HttpContext.Current.User.Identity))();
-            }
-            foreach (var task in Container.ResolveAll<IRunAtInit>())
-            {
-                task.Execute();
-            }
-            foreach (var task in Container.ResolveAll<IRunAtStartup>())
-            {
-                task.Execute();
+                foreach (var task in cont.GetAllInstances<IRunAtInit>())
+                {
+                    task.Execute();
+                } foreach (var task in cont.GetAllInstances<IRunAtStartup>())
+                {
+                    task.Execute();
+                }
             }
         }
 
         public void Application_BeginRequest()
         {
-            if (Container == null)
-            {
-                Container = Bootstrapper.GetConfiguredContainer();
-                Container.RegisterType<AccountController>(new InjectionConstructor());
-                Container.RegisterType<ManageController>(new InjectionConstructor());
-            }
-            foreach (var task in Container.ResolveAll<IRunOnRequest>())
+            Container = IocInitialize.Initialize().GetNestedContainer();            
+            foreach (var task in Container.GetAllInstances<IRunOnRequest>())
             {
                 task.Execute();
             }
@@ -60,16 +45,17 @@ namespace JPS_Project
 
         public void Application_Error()
         {
-            foreach (var task in Container.ResolveAll<IRunOnError>())
+            foreach (var task in Container.GetAllInstances<IRunOnError>())
             {
                 task.Execute();
             }
         }
+
         public void Application_EndRequest()
         {
             try
             {
-                foreach (var task in Container.ResolveAll<IRunAfterRequest>())
+                foreach (var task in Container.GetAllInstances<IRunAfterRequest>())
                 {
                     task.Execute();
                 }
@@ -78,6 +64,18 @@ namespace JPS_Project
             {
                 Container.Dispose();
                 Container = null;
+            }
+        }
+
+        public IContainer Container
+        {
+            get
+            {
+                return (IContainer)HttpContext.Current.Items["_Container"];
+            }
+            set
+            {
+                HttpContext.Current.Items["_Container"] = value;
             }
         }
     }

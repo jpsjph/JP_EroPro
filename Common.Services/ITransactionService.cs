@@ -13,6 +13,6 @@ namespace Common.Services
         /// Get all transaction payments
         /// </summary>
         /// <returns>List of TransactionPayment</returns>
-        IEnumerable<TransactionPayment> GetAllTransactionPayment();
+        IQueryable<TransactionPayment> GetAllTransactionPayment();
     }
 }
