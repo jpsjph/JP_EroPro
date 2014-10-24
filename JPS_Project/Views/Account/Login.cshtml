@@ -1,0 +1,98 @@
+﻿@using JPS_Project.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="animated fadeInDown">
+
+    <header id="header">
+        <div id="logo-group">
+            <span id="logo"> <img src="" alt="Ero57"> </span>
+        </div>
+        <span id="extr-page-header-space">
+            <span class="hidden-mobile">
+                Need an account?
+            </span>
+            @Html.ActionLink("Create account", "Register", "Account", new { @class = "btn btn-danger" })
+        </span>
+    </header>
+
+    <div id="main" role="main">
+        <div id="content" class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-xs hidden-sm">
+                    <h1 class="txt-color-red login-header-big">Ero57</h1>
+                    <div class="hero">
+                        <div class="pull-left login-desc-box-l">
+                            <h4 class="paragraph-header">Receivable Software</h4>
+                            <div class="login-app-icons">
+                                <a href="javascript:void(0);" class="btn btn-danger btn-sm">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+                    <div class="well no-padding">
+
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "smart-form client-form", role = "login-form" }))
+                        {
+                            <header>
+                                Sign In
+                            </header>
+                            @Html.AntiForgeryToken()
+                            <fieldset>
+
+                                <section>
+                                    <label class="label">E-mail</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-user"></i>
+                                        <input type="email" name="email">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter email address/username</b>
+                                    </label>
+                                </section>
+
+                                <section>
+                                    <label class="label">Password</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-lock"></i>
+                                        <input type="password" name="password">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b>
+                                    </label>
+                                    <div class="note">
+                                        @Html.ActionLink("Forgot password?", "ForgotPassword", "Account")
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="remember" checked="">
+                                        <i></i>Stay signed in
+                                    </label>
+                                </section>
+                            </fieldset>
+                            <footer>
+                                <button type="submit" class="btn btn-primary">
+                                    Sign in
+                                </button>
+                            </footer>
+                        }
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <h5 class="about-heading">About Ero57- Are you up to date?</h5>
+                        <p>
+                            MoretonSmith are receivables management specialists, providing a holistic approach to high-performance accounts receivable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
